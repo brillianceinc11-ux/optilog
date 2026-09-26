@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-charcoal-900 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    @apply bg-forest-500 text-white;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+  .section-py {
+    @apply py-20 lg:py-28;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-charcoal-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-forest-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-forest-700;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(35, 60, 25, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 60, 25, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-pattern-dark {
+  background-image:
+    linear-gradient(rgba(74, 222, 128, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 222, 128, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Dotted map pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(58, 115, 59, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dot-pattern-light {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
